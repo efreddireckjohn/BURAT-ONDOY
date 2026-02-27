@@ -28,7 +28,21 @@
             document.getElementById("outGrade").innerText = info.grade;
             document.getElementById("outSec").innerText = info.section;
         }
-        
+        function togglePass() {
+    // Kuhaon ang duha ka password fields
+    let p1 = document.getElementById("p1");
+    let p2 = document.getElementById("p2");
+    let check = document.getElementById("showPass");
+
+    // I-check kung naka-check ang box
+    if (check.checked) {
+        p1.type = "text";
+        p2.type = "text";
+    } else {
+        p1.type = "password";
+        p2.type = "password";
+    }
+}
     </script>
 </body>
 </html>
