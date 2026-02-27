@@ -18,13 +18,17 @@
         
         <button class="btn btn-danger w-100 mt-3" onclick="window.location.href='login3.html'">Back</button>
     </div>
-
+    
     <script>
-        // Kuhaon ang data gikan sa "localStorage"
-        document.getElementById("outFname").innerText = localStorage.getItem("fname");
-        document.getElementById("outLname").innerText = localStorage.getItem("lname");
-        document.getElementById("outGrade").innerText = localStorage.getItem("grade");
-        document.getElementById("outSec").innerText = localStorage.getItem("section");
+        let data = localStorage.getItem("studentData");
+        if (data) {
+            let info = JSON.parse(data);
+            document.getElementById("outFname").innerText = info.fname;
+            document.getElementById("outLname").innerText = info.lname;
+            document.getElementById("outGrade").innerText = info.grade;
+            document.getElementById("outSec").innerText = info.section;
+        }
+        
     </script>
 </body>
 </html>
