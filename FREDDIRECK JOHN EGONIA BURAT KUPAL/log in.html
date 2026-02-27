@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body { font-family: sans-serif; color: beige;text-align: center; /* I-center ang text horizontally */
+    padding-top: 50px;
+}body {
+          background-image: url('gggg.jpg');
+          background-repeat: no-repeat; 
+          background-size: cover; 
+          background-position: center; 
+          background-attachment: fixed; 
+          background-color: rgba(23, 23, 23, 0.6);
+         background-blend-mode: darken;
+        }
+        input { margin-bottom: 10px; padding: 5px; }
+        button { cursor: pointer; padding: 5px 15px; }
+
+    </style>
+</head>
+<body>
+    <label>Username:</label>
+    <br>
+    <input type="text" id="userInput" placeholder="enter text">
+<br>
+<br>
+    <label>Password:</label>
+    <br>
+    <input type="password" id="passInput" placeholder="enter text">
+<br>
+<button id="btnShow" onclick="ipakitaPass()" style="padding: 2px 5px; font-size: 12px;">
+    Show Password
+</button>
+<br><br>
+
+    <button onclick="kuhavalue()">Log in</button>
+
+    <p id="display"></p>
+    <script>
+     function ipakitaPass() {
+
+    let x = document.getElementById("passInput");
+    
+  
+    let btn = document.getElementById("btnShow");
+
+    if (x.type === "password")
+     { x.type = "text";
+        btn.innerHTML = "Hide Password"; }
+         else { x.type = "password";
+        btn.innerHTML = "Show Password"; }
+}
+            
+function kuhavalue() {
+    let correctUser = "egonia";
+    let correctPass = "0816";
+
+    let user = document.getElementById("userInput").value;
+    let pass = document.getElementById("passInput").value;
+
+    if (user !== correctUser && pass !== correctPass) {
+        alert("Username and Password not found");} 
+
+    else if (user !== correctUser)
+     { alert("Username not found"); } 
+    else if (pass !== correctPass)
+     { alert("Password not found"); } 
+    else 
+    {alert("Log in Successfully"); }
+}
+    </script>
+</body>
+</html>

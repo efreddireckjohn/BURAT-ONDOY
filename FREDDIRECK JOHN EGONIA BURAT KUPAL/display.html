@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: #121212; color: white; display: flex; align-items: center; height: 100vh; }
+        .info-card { background: white; color: black; padding: 40px; border-radius: 15px; margin: auto; width: 400px; }
+    </style>
+</head>
+<body>
+    <div class="info-card shadow-lg">
+        <h2 class="text-center text-primary">Student Info</h2>
+        <hr>
+        <p><strong>Firstname:</strong> <span id="outFname"></span></p>
+        <p><strong>Lastname:</strong> <span id="outLname"></span></p>
+        <p><strong>Grade:</strong> <span id="outGrade"></span></p>
+        <p><strong>Section:</strong> <span id="outSec"></span></p>
+        
+        <button class="btn btn-danger w-100 mt-3" onclick="window.location.href='login3.html'">Back</button>
+    </div>
+
+    <script>
+        // Kuhaon ang data gikan sa "localStorage"
+        document.getElementById("outFname").innerText = localStorage.getItem("fname");
+        document.getElementById("outLname").innerText = localStorage.getItem("lname");
+        document.getElementById("outGrade").innerText = localStorage.getItem("grade");
+        document.getElementById("outSec").innerText = localStorage.getItem("section");
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+.navbar {
+    width: 100%;
+    background-color: rgb(172, 172, 172);
+    overflow: auto;
+    border: 5px;
+    border-style: solid;
+    border-color: white;
+    display: flex;
+  }
+  
+  /* Navbar links */
+  .navbar a {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: xx-large;
+  }
+  .navbar a:hover {
+    background-color: rgb(54, 52, 52);
+  }
+  .active {
+    background-color: #fcfcfc;
+  }
+  
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+    }
+  }
+  img {width: 50px; height: 50px;}
+  body {
+    background-image: url("666.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .flex-container{ display: flex;
+  background-color: gray;
+  border: 5px; ;
+    border-style: solid;
+    border-color:white;
+    width: 100%;
+  }
+  
+
+  .flex-container >div{
+    background-color: rgb(255, 255, 255);
+    margin: 10px;
+    padding: 20px;
+    font-size: xx-large;
+    font-weight: bolder;
+    color: black;
+    border: 5px; ;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+  }
+.flex-container :hover{ background-color:gray;}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Egonia Registration</title>
+    <link rel="stylesheet" href="login3.css">
+</head>
+<body>
+
+    <div class="left-side"></div>
+    
+     <div class="right-side">
+        <h2>Create Account</h2>
+
+        <label>Firstname</label>
+        <input type="text" id="fn" placeholder="Enter Firstname">
+
+        <label>Middle Name</label>
+        <input type="text" id="mn" placeholder="Enter Middle Name">
+
+        <label>Last Name</label>
+        <input type="text" id="ln" placeholder="Enter Last Name">
+
+        <label>Grade Level</label>
+        <select id="grade" onchange="piliSection()">
+            <option value="" disabled selected hidden>Select Grade Level</option>
+            <option value="11">Grade 11</option>
+            <option value="12">Grade 12</option>
+        </select>
+
+        <label>Section</label>
+        <select id="sec">
+            <option value="" disabled selected hidden>Select Section</option>
+        </select>
+
+        <label>Username</label>
+        <input type="text" id="un" placeholder="Create Username">
+
+        <label>Password</label>
+        <input type="password" id="p1" placeholder="********">
+
+        <label>Confirm Password</label>
+        <input type="password" id="p2" placeholder="********">
+
+        <br>
+        <input type="checkbox" id="show" onclick="togglePass()" style="width: auto;"> 
+        <span style="font-size: 13px;">Show Password</span>
+
+        <button class="btn-blue" onclick="saveData()">REGISTER NOW</button>
+        <button class="btn-back" onclick="window.location.href='log_in.html'">BACK TO LOGIN</button>
+    </div>
+
+    <script>
+        function piliSection() {
+            let g = document.getElementById("grade").value;
+            let s = document.getElementById("sec");
+            s.innerHTML = "";
+            if (g == "11") {
+                let s11 = ["STEM-11", "ICT-11", "HUMSS-11"];
+                s11.forEach(item => s.innerHTML += `<option value="${item}">${item}</option>`);
+            } else if (g == "12") {
+                let s12 = ["STEM-12", "ICT-12", "GAS-12"];
+                s12.forEach(item => s.innerHTML += `<option value="${item}">${item}</option>`);
+            }
+        }
+
+        function togglePass() {
+            let p1 = document.getElementById("p1");
+            let p2 = document.getElementById("p2");
+            let check = document.getElementById("show").checked;
+            p1.type = check ? "text" : "password";
+            p2.type = check ? "text" : "password";
+        }
+
+        function saveData() {
+            let p1 = document.getElementById("p1").value;
+            let p2 = document.getElementById("p2").value;
+
+            if (p1 !== p2 || p1 == "") {
+                alert("Passwords do not match!");
+            } else {
+                let info = {
+                    fname: document.getElementById("fn").value,
+                    lname: document.getElementById("ln").value,
+                    user: document.getElementById("un").value,
+                    grade: document.getElementById("grade").value,
+                    section: document.getElementById("sec").value
+                };
+                localStorage.setItem("studentData", JSON.stringify(info));
+                window.location.href = "display.html";
+            }
+        }
+    </script>
+</body>
+</html>

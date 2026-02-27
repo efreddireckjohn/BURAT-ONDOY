@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portfolio | Creative Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1; /* Indigo */
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --glass: rgba(255, 255, 255, 0.7);
+            --text: #1f2937;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body { 
+            font-family: 'Outfit', sans-serif; 
+            background: var(--bg-gradient); 
+            background-attachment: fixed;
+            color: var(--text); 
+            line-height: 1.6;
+        }
+
+        /* --- Custom Navbar --- */
+        nav {
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            padding: 10px 30px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            list-style: none;
+        }
+
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text); 
+            font-weight: 500; 
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- Hero Section --- */
+        header {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .profile-badge {
+            background: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        header h1 { font-size: 4rem; margin-bottom: 10px; line-height: 1.1; }
+        header p { font-size: 1.2rem; color: #4b5563; max-width: 600px; margin-bottom: 30px; }
+
+        /* --- About Section --- */
+        section { padding: 80px 10%; }
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .section-title { font-size: 2rem; margin-bottom: 20px; color: var(--primary); }
+
+        /* --- Works Section --- */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .work-item {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .work-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.1);
+        }
+
+        /* --- Contact Section --- */
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .btn-contact {
+            padding: 12px 25px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .fb { background: #1877F2; color: white; }
+        .mail { background: white; color: var(--text); border: 1px solid #ddd; }
+        .btn-contact:hover { opacity: 0.8; transform: scale(1.05); }
+
+        footer { text-align: center; padding: 50px; font-size: 0.9rem; color: #6b7280; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Mobile fix */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-weight: 700; font-size: 1.5rem;">[Initials]</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="profile-badge">STUDENT DEVELOPER</div>
+        <h1>Creative Mind. <br> Digital Solutions.</h1>
+        <p>I'm Francis, a student who loves turning ideas into interactive digital reality.</p>
+        <a href="#works" style="color: var(--primary); font-weight: 700; text-decoration: none;">Scroll to see projects ↓</a>
+    </header>
+
+    <section id="about">
+        <div class="glass-card">
+            <h2 class="section-title">Hello, world!</h2>
+            <p>I am a student at <strong>NNCHS</strong> currently exploring the beauty of web development. I focus on learning how to build user-friendly applications and improving my coding skills day by day. I believe that being a student is a superpower—it means I'm always ready to learn.</p>
+        </div>
+    </section>
+
+    <section id="works">
+        <h2 style="text-align: center; margin-bottom: 40px;">Selected Works</h2>
+        <div class="works-grid">
+            <div class="work-item">
+                <span style="font-size: 2rem;">📂</span>
+                <h3>Project One</h3>
+                <p>A simple school project created using HTML and CSS for our programming class.</p>
+            </div>
+            <div class="work-item">
+                <span style="font-size: 2rem;">🛠️</span>
+                <h3>Project Two</h3>
+                <p>An experimental application I built to practice my logic and problem-solving skills.</p>
+            </div>
+            <div class="work-item">
+                <span style="font-size: 2rem;">💡</span>
+                <h3>Project Three</h3>
+                <p>A creative UI design concept for a mobile app focused on student productivity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" style="text-align: center;">
+        <h2 class="section-title">Let's Connect</h2>
+        <p>Feel free to reach out for collaborations or just a friendly chat!</p>
+        <div class="contact-row">
+            <a href="mailto:your-email@gmail.com" class="btn-contact mail">📧 Email Me</a>
+            <a href="https://www.facebook.com/francis.mesiona.9" target="_blank" class="btn-contact fb">Facebook</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 francis. Designed with 💙</p>
+    </footer>
+
+</body>
+</html>
